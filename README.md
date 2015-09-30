@@ -11,15 +11,15 @@ create or manage ELINE and ELAN services.
  -------------------------------------------------------------------------------------------------------------------
 |  Version   |Date          |Reason For Change
 |------------|-----------------------|-----------------|  
-|  1.0       |Nov 21^st^ , 2012      |Document created |
-|  1.1       |Dec.17^th^, 2012       |ELIINE Service Manager software is updated.|
-|  1.2       |Dec.20^th^, 2012       |ELAN Service Manager software is updated.|
-| 1.3       |January 28^th^, 2013   |Software change. VC/VS name is changed.|
-|1.4|       April 14^th^, 2013 |    Software change. GUI menu and templates are updated.|
-|1.5|       October 27^th^, 2013|   Software updated to support ENNI functionality.
+|  1.0       |Nov 21, 2012      |Document created |
+|  1.1       |Dec.17, 2012       |ELIINE Service Manager software is updated.|
+|  1.2       |Dec.20, 2012       |ELAN Service Manager software is updated.|
+| 1.3       |January 28, 2013   |Software change. VC/VS name is changed.|
+|1.4|       April 14, 2013 |    Software change. GUI menu and templates are updated.|
+|1.5|       October 27, 2013|   Software updated to support ENNI functionality.
 |  1.6      | February 25, 2014     | Threshold.conf file description is added to the Requirements section.
-|  1.7      | July 8^th^, 2014      | Software updated to support NID Only functionality.
-|  1.8      | Sept 24^th^, 2014     | Software update for EPLAN/EVPLAN functionality.
+|  1.7      | July 8, 2014      | Software updated to support NID Only functionality.
+|  1.8      | Sept 24, 2014     | Software update for EPLAN/EVPLAN functionality.
 |  1.9      | May 25, 2015          | New features added to Vodafone service provisioning templates
 |  2.0      | May 26, 2015          | Updated device selection procedure for each service creation procedure. Added screen shots for SCos modification.
 |2.1      | May 26, 2015          | Added screen shots of SCos modification for EPL service.
