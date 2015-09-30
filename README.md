@@ -8,9 +8,7 @@ create or manage ELINE and ELAN services.
 2.  Change History
 ==================
 
-
-
--------------------------------------------------------------------------------------------------------------------
+ -------------------------------------------------------------------------------------------------------------------
 |  Version   |Date          |Reason For Change
 |------------|-----------------------|-----------------|  
 |  1.0       |Nov 21^st^ , 2012      |Document created |
@@ -25,99 +23,59 @@ create or manage ELINE and ELAN services.
 |  1.9      | May 25, 2015          | New features added to Vodafone service provisioning templates
 |  2.0      | May 26, 2015          | Updated device selection procedure for each service creation procedure. Added screen shots for SCos modification.
 |2.1      | May 26, 2015          | Added screen shots of SCos modification for EPL service.
-  --------- ---------------------- -------------------------------------------------------------------------------------------------------------------
+ -------------------------------------------------------------------------------------------------------------------
 
 
-4.  Requirements {.western style="page-break-before: always"}
-    ============
+4.  Requirements
+================
 
--   User should have root access to the ESM server.
+* User should have root access to the ESM server.
 
--   User should have an account to log into a Ciena device to verify the
-    configurations or provision.
+* User should have an account to log into a Ciena device to verify the configurations or provision.
 
--   Aggregation devices are pre-configured to allow user to use the
-    ELINE service creation template to create a service. This includes
-    that two AGG groups are created and name end with either l2ss or
-    mpls.
+* Aggregation devices are pre-configured to allow user to use the ELINE service creation template to create a service. This includes that two AGG groups are created and name end with either l2ss or mpls.
 
--   Ensure the management vlan is removed from the UNI ports on the edge
-    devices. Otherwise, you will get this type of error no available
-    UNI ports on \<device type\> \<device IP address\> 
+* Ensure the management vlan is removed from the UNI ports on the edge devices. Otherwise, you will get this type of error no available UNI ports on \<device type\> \<device IP address\> 
 
--   The EPIPE-BW.txt & EVPN-BW.txt file is located under
-    /opt/Ciena/ESM/provisioningtemplates/scripts/provisioning directory
-    after the ELINE and ELAN Service Manager installation. They define
-    the bandwidth to be used by the ELINE and ELAN services. This file
-    can be adjusted according to customers needs.
+* The EPIPE-BW.txt & EVPN-BW.txt file is located under /opt/Ciena/ESM/provisioningtemplates/scripts/provisioning directory after the ELINE and ELAN Service Manager installation. They define the bandwidth to be used by the ELINE and ELAN services. This file can be adjusted according to customers needs.
 
--   The TRANSPORT-VLANs.txt file is located under
-    /opt/Ciena/ESM/provisioningtemplates/scripts/provisioning directory.
-    It needs to be pre-configured with the transport vlan ID configured
-    on the AGG nodes.
+* The TRANSPORT-VLANs.txt file is located under  /opt/Ciena/ESM/provisioningtemplates/scripts/provisioning directory.  It needs to be pre-configured with the transport vlan ID configured on the AGG nodes.
 
--   The AGG-IPs.txt file is located under
-    /opt/Ciena/ESM/provisioningtemplates/scripts/provisioning directory.
-    It needs to be updated with the Aggregation nodes IP subnet used by
-    the customer.
+* The AGG-IPs.txt file is located under  /opt/Ciena/ESM/provisioningtemplates/scripts/provisioning directory.  It needs to be updated with the Aggregation nodes IP subnet used by the customer.
 
--   Multiple links between the core and the NID devices are in place and
-    agg configuration is created on the devices.
+* Multiple links between the core and the NID devices are in place and agg configuration is created on the devices.
 
--   Threshold.conf file is created under the
-    \$ESM\_HOME/provisioningtemplates/scripts/provisioning/ directory.
-    It defines the Delay and Jitter default values for Vodafone's
-    services based on the regions.
+* Threshold.conf file is created under the  \$ESM\_HOME/provisioningtemplates/scripts/provisioning/ directory.  It defines the Delay and Jitter default values for Vodafone's services based on the regions.
 
--   NNI-Ports.txt file is created under the
-    \$ESM\_HOME/provisioningtemplates/scripts/provisioning/ directory.
-    It defines the NNI ports for different device type including 3902,
-    3916 and 3930.\
-    \
+* NNI-Ports.txt file is created under the \$ESM\_HOME/provisioningtemplates/scripts/provisioning/ directory. It defines the NNI ports for different device type including 3902,3916 and 3930.
 
-\
-\
+5.  VFNZ Service Creation Phase I 
+=================================
 
-5.  VFNZ Service Creation Phase I {.western style="page-break-before: always"}
-    =============================
-
-    1.  Create EPIPE E-Line/Access End to End Service {.western}
-        ---------------------------------------------
-
-        1.  #### Create an EPIPE E-Line/Access EPL Service {.western}
-
-1.  Log into the ESM GUI. Go to  Applications -\> Network Database
+    5.1  Create EPIPE E-Line/Access End to End Service 
+      ------
+        5.1.1   Create an EPIPE E-Line/Access EPL Service 
+     
+    a.  Log into the ESM GUI. Go to  Applications -\> Network Database
     -\> Nodes, press Ctrl + F.
 
-\
-
-2.  In the Search window, change the first and the second search filter
+    b.  In the Search window, change the first and the second search filter
     to Display Name, contains. Type in the device IP in the matching
     field. Click on More to add more search entry as needed to search
     for the devices. Make sure you use the same searching filters and
     uncheck the Match All of the Above Criteria check box. Click on
     the Search button to get the devices.
 
-\
-
-\
-
-3.  Seclt all the devices, right click and select Snmp-Node -\> VFNZ
+    c.  Seclt all the devices, right click and select Snmp-Node -\> VFNZ
     EPIPE E-Line/Access End to End Service Creation.
 
-\
-
-\
-
-4.  In the drop down menu, select a UNI Service Type. Type in a
+    d.  In the drop down menu, select a UNI Service Type. Type in a
     Subscriber Name. Click on Next to continue.
 
-\
-\
-
-5.  Configure the service parameters as required.
+    e.  Configure the service parameters as required.
 
 Note:
+--
 
 1.  Deploy Generated Configuration to devices  if this box is checked,
     the configuration will be pushed down to the devices right away. The
@@ -147,78 +105,54 @@ Note:
 
 Click on Next to continue.
 
-6.  Configure the CIR value.
+f.  Configure the CIR value.
 
 Note: The CIR values are defined in the EPIPE-BW.txt file located
 under /opt/Ciena/ESM/provisioningtemplates/scripts/provisioning
 directory. It can be changed if required.
 
-\
-\
-
 Click on Next to create the service. Close the window when the service
 is created successfully.
 
-7.  Telnete to each NID device and verify
+g.  Telnete to each NID device and verify
 
-1.  The vs is created on both devices.
 
-2.  The port description is set correctly for each UNI port.
-
-3.  Traffic profiling is created correctly.
-
-4.  CBS/EBS value is set correctly.
-
-5.  Dot1p classifier configuration is configured correctly.
-
-6.  Traffic shaper configuration is set correctly.
-
-7.  CFM service is up and no CFM alarms.
-
-8.  Verify the SVLAN-ID is added to the Aggregation port on the NID
-    connected to the aggregation node.
-
-\
+        1.  The vs is created on both devices.
+        2.  The port description is set correctly for each UNI port.
+        3.  Traffic profiling is created correctly
+        4.  CBS/EBS value is set correctly
+        5.  Dot1p classifier configuration is configured correctly
+        6.  Traffic shaper configuration is set correctly
+        7.  CFM service is up and no CFM alarms
+        8.  Verify the SVLAN-ID is added to the Aggregation port on the NID
+            connected to the aggregation node.
 
 See the output attached.
 
-\
 
-\
 
-8.  Verify the subscriber identifier is stored in the database.
+h.  Verify the subscriber identifier is stored in the database.
 
 Log into the MySQL database and select the database. For example:
 
-**\# mysql -u root -p**
+**\# mysql -u root -p** 
 
-  --------------------------------------------------------------------
-  Enter password:
-
-  Welcome to the MySQL monitor. Commands end with ; or \\g.
-
-  Your MySQL connection id is 683304
-
-  Server version: 5.0.77 Source distribution
-
-  \
-
+  Enter password:                                                     
+  Welcome to the MySQL monitor. Commands end with ; or \g.  
+    Your MySQL connection id is 683304  
+    Server version: 5.0.77 Source distribution
+    
   Type 'help;' or '\\h' for help. Type '\\c' to clear the buffer.
 
-  \
-
-  mysql\> **use ESMDB61;**
-
-  Reading table information for completion of table and column names
-
+  mysql\> **use ESMDB61;**  
+  Reading table information for completion of table and column names    
   You can turn off this feature to get a quicker startup with -A
 
-  \
-
   Database changed
+  
   --------------------------------------------------------------------
 
-\
+
 
 Run a MySQL query to search for the subscriber identifier from
 ManagedObject table. For example:
@@ -226,11 +160,11 @@ ManagedObject table. For example:
   --------------------------------------------------------------
   mysql\> select \* from TOPOUSERPROPS where name='EPL000100';
 
-  +-----------+-----------+-----------------+---------------+
+ #
 
   | NAME | OWNERNAME | PROPNAME | PROPVAL |
 
-  +-----------+-----------+-----------------+---------------+
+ 
 
   | EPL000100 | NULL | NodeZ | VFNZ-3930\_226 |
 
